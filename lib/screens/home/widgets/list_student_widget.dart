@@ -15,9 +15,18 @@ class ListStudentWidget extends StatelessWidget {
           itemBuilder: (context, index) {
              final data = studentList[index];
             return ListTile(
+              leading: CircleAvatar(backgroundColor: Colors.indigo,),
               title: Text(data.name),
               subtitle: Text(data.age),
-            );
+              trailing: IconButton(onPressed: (){
+                if (data.id != null) {
+                  deleteStudent(data.id!);
+                } else {
+                  print('Unabled to delete');
+                }
+                
+              }, icon: const Icon(Icons.delete, color: Colors.red, size: 20,)),
+            ); 
           },
           separatorBuilder: (ctx, incex) {
             return const Divider();

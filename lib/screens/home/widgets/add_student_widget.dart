@@ -55,7 +55,7 @@ class AddStudentWidget extends StatelessWidget {
     return;
   }
   log('$_name $_age');
-  final _student =  StudentModel(name: _name, age: _age);
+  final _student =  StudentModel(1, name: _name, age: _age);
   addStudent(_student);
 }
 }
